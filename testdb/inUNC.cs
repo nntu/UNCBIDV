@@ -22,5 +22,6 @@ namespace UyNhiemChiBIDV
         public bool phingoai { get; set; } = false;
         public string KeToanTruong { get; set; } = @"";
         public string ChuTaiKhoan { get; set; } = @"";
+        public DateTime Ngayin { get; set; }
     }
 }

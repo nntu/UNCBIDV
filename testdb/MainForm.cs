@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiteDB;
+using System;
 using System.Windows.Forms;
 
 namespace UyNhiemChiBIDV
@@ -31,6 +32,33 @@ namespace UyNhiemChiBIDV
         private inUNC unc;
 
         private void button1_Click(object sender, EventArgs e)
+        {
+         
+        }
+
+        private Config cf;
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            cf = Config.Load();
+            tb_chinhanh.Text = cf.TenCN;
+            tb_tentktrichno.Text = cf.TenTKTN;
+            tb_tktrichno.Text = cf.SoTKTN;
+            tb_ketoantruong.Text = cf.KeToanTruong;
+            tb_ChuTK.Text = cf.ChuTaiKhoan;
+        }
+
+        private void bt_capnhattktricno_Click(object sender, EventArgs e)
+        {
+            cf.TenCN = tb_chinhanh.Text.Trim();
+            cf.TenTKTN = tb_tentktrichno.Text.Trim();
+            cf.SoTKTN = tb_tktrichno.Text.Trim();
+            cf.KeToanTruong = tb_ketoantruong.Text.Trim();
+            cf.ChuTaiKhoan = tb_ChuTK.Text.Trim();
+            cf.Save();
+        }
+
+        private void bt_in_Click(object sender, EventArgs e)
         {
             unc = new inUNC();
             if (tb_sotienbs.Text.Length < 2)
@@ -66,47 +94,41 @@ namespace UyNhiemChiBIDV
 
                 var sotienbs = Lib.DocSoThanhChu(tb_sotienbs.Text) + @" đồng";
 
-                var a2= Lib.ChiaDong(sotienbs,5);
+                var a2 = Lib.ChiaDong(sotienbs, 5);
 
-             
+
                 unc.sotienbc1 = a2[0];
                 unc.sotienbc2 = a2[1];
                 viewUNC a = new viewUNC(unc);
-                if (a.ShowDialog() == DialogResult.Cancel) {
+                if (a.ShowDialog() == DialogResult.Cancel)
+                {
                     var re = MessageBox.Show("Bạn muốn lưu lại thông tin in unc không", "Lưu", MessageBoxButtons.OKCancel);
                     if (re == DialogResult.OK)
                     {
-                        UncDbContext uncdb = new UncDbContext();
-                        uncdb.Uncs.Add(unc);
-                        uncdb.SaveChanges();
-
+                        using (var db = new LiteDatabase(@"MyData.db"))
+                        {
+                            var uncdb = db.GetCollection<inUNC>("inUNC");
+                            uncdb.Insert(unc);
+                        }
                     }
-                   
+
                 };
 
             }
         }
 
-        private Config cf;
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void bt_laysol_Click(object sender, EventArgs e)
         {
-            cf = Config.Load();
-            tb_chinhanh.Text = cf.TenCN;
-            tb_tentktrichno.Text = cf.TenTKTN;
-            tb_tktrichno.Text = cf.SoTKTN;
-            tb_ketoantruong.Text = cf.KeToanTruong;
-            tb_ChuTK.Text = cf.ChuTaiKhoan;
-        }
+            using (var db = new LiteDatabase(@"MyData.db"))
+            {
+                var col = db.GetCollection<inUNC>("inUNC");
+                var results = col.FindAll();
+                var bi = new BindingSource();
+                bi.DataSource = results;               
+                dataGridView1.DataSource = bi;
+                
+            }
 
-        private void bt_capnhattktricno_Click(object sender, EventArgs e)
-        {
-            cf.TenCN = tb_chinhanh.Text.Trim();
-            cf.TenTKTN = tb_tentktrichno.Text.Trim();
-            cf.SoTKTN = tb_tktrichno.Text.Trim();
-            cf.KeToanTruong = tb_ketoantruong.Text.Trim();
-            cf.ChuTaiKhoan = tb_ChuTK.Text.Trim();
-            cf.Save();
-        }
+            }
     }
 }
