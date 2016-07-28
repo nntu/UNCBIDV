@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -7,7 +8,7 @@ namespace UyNhiemChiBIDV
 {
     public static class Lib
     {
-        private static string[] SplitWords(string s)
+        public static string[] SplitWords(string s)
         {
             //
             // Split on all non-word characters.
@@ -17,6 +18,58 @@ namespace UyNhiemChiBIDV
             // @      special verbatim string syntax
             // \W+    one or more non-word characters together
         }
+
+
+        public static string[] ChiaDong (string stringToSplit, int sochu) {
+            string[] re = new string[2];
+            string[] words = stringToSplit.Split(' ');
+            StringBuilder line1 = new StringBuilder(); StringBuilder line2 = new StringBuilder();
+            int i = 0;
+            foreach (string word in words)
+            {
+                if (i <= sochu)
+                {
+                    line1.Append(word + " ");
+                }
+                else {
+                    line2.Append(word + " ");
+                }
+                i++;
+            }
+            re[0]= line1.ToString().Trim();
+            re[1] = line2.ToString().Trim();
+             return re;
+        }
+
+        public static IEnumerable<string> SplitToLines(string stringToSplit, int maxLineLength)
+        {
+            string[] words = stringToSplit.Split(' ');
+            StringBuilder line = new StringBuilder();
+            foreach (string word in words)
+            {
+                if (word.Length + line.Length <= maxLineLength)
+                {
+                    line.Append(word + " ");
+                }
+                else
+                {
+                    if (line.Length > 0)
+                    {
+                        yield return line.ToString().Trim();
+                        line.Clear();
+                    }
+                    string overflow = word;
+                    //while (overflow.Length > maxLineLength)
+                    //{
+                    //    yield return overflow.Substring(0, maxLineLength);
+                    //    overflow = overflow.Substring(maxLineLength);
+                    //}
+                    line.Append(overflow + " ");
+                }
+            }
+            yield return line.ToString().Trim();
+        }
+
 
         public static int GetNoOfWords(string s)
         {

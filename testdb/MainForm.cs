@@ -66,11 +66,24 @@ namespace UyNhiemChiBIDV
 
                 var sotienbs = Lib.DocSoThanhChu(tb_sotienbs.Text) + @" đồng";
 
-                var sotu = Lib.GetNoOfWords(sotienbs);
-                unc.sotienbc1 = sotienbs.CropWholeWords(12);
-                unc.sotienbc2 = sotienbs.Replace(sotienbs.CropWholeWords(12), "");
+                var a2= Lib.ChiaDong(sotienbs,5);
+
+             
+                unc.sotienbc1 = a2[0];
+                unc.sotienbc2 = a2[1];
                 viewUNC a = new viewUNC(unc);
-                a.Show();
+                if (a.ShowDialog() == DialogResult.Cancel) {
+                    var re = MessageBox.Show("Bạn muốn lưu lại thông tin in unc không", "Lưu", MessageBoxButtons.OKCancel);
+                    if (re == DialogResult.OK)
+                    {
+                        UncDbContext uncdb = new UncDbContext();
+                        uncdb.Uncs.Add(unc);
+                        uncdb.SaveChanges();
+
+                    }
+                   
+                };
+
             }
         }
 

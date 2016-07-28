@@ -93,7 +93,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Số TK trích Nợ/ Dr A/c No:\t\t";
+            this.label2.Text = "Số TK trích Nợ/ Dr A/c No:";
             // 
             // label3
             // 
@@ -112,7 +112,6 @@
             this.label4.Size = new System.Drawing.Size(113, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Số CMND/HC/ID/PP:";
-          
             // 
             // label5
             // 
@@ -217,7 +216,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(100, 13);
             this.label8.TabIndex = 5;
-            this.label8.Text = "Chi nhánh/ Branch:\t\t";
+            this.label8.Text = "Chi nhánh/ Branch:";
             // 
             // tb_tentktrichno
             // 
@@ -349,7 +348,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(18, 255);
+            this.label11.Location = new System.Drawing.Point(22, 255);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(88, 13);
             this.label11.TabIndex = 12;
@@ -366,7 +365,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(18, 281);
+            this.label12.Location = new System.Drawing.Point(22, 281);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(100, 13);
             this.label12.TabIndex = 15;

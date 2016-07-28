@@ -45,7 +45,7 @@ namespace UyNhiemChiBIDV
             UNCA41.SetParameterValue("SoTK", uncl.sotk);
 
             UNCA41.SetParameterValue("NganHangNhan", uncl.nganhangnhhan);
-            UNCA41.SetParameterValue("SoTien", uncl.sotien);
+            UNCA41.SetParameterValue("SoTien", String.Format("{0:0,0} đồng", uncl.sotien));
             UNCA41.SetParameterValue("SoTienbs1", uncl.sotienbc1);
             UNCA41.SetParameterValue("SoTienbs2", uncl.sotienbc2);
             UNCA41.SetParameterValue("NoiDung", uncl.noidung);

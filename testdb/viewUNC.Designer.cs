@@ -34,13 +34,12 @@
             // 
             // crv
             // 
-            this.crv.ActiveViewIndex = 0;
+            this.crv.ActiveViewIndex = -1;
             this.crv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crv.Cursor = System.Windows.Forms.Cursors.Default;
             this.crv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crv.Location = new System.Drawing.Point(0, 0);
             this.crv.Name = "crv";
-            this.crv.ReportSource = this.UNCA41;
             this.crv.Size = new System.Drawing.Size(600, 336);
             this.crv.TabIndex = 0;
             this.crv.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
@@ -61,6 +60,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crv;
-        private UNCA4 UNCA41;
+        public UNCA4 UNCA41;
     }
 }
