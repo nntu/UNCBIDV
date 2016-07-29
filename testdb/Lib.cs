@@ -95,8 +95,8 @@ namespace UyNhiemChiBIDV
             {
                 s = s.Substring(1);
             }
-            string[] so = new string[] { "không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín" };
-            string[] hang = new string[] { "", "nghìn", "triệu", "tỷ" };
+            string[] so = { "không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín" };
+            string[] hang = { "", "nghìn", "triệu", "tỷ" };
             int i, j, donvi, chuc, tram;
 
             bool booAm = false;
