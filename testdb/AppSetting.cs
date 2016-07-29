@@ -44,7 +44,7 @@ namespace UyNhiemChiBIDV
             }
             else {
                 Save(t , DEFAULT_FILENAME);
-            };
+            }
             return t;
         }
     }
