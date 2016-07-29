@@ -48,6 +48,7 @@ namespace UyNhiemChiBIDV
             tb_tktrichno.Text = cf.SoTKTN;
             tb_ketoantruong.Text = cf.KeToanTruong;
             tb_ChuTK.Text = cf.ChuTaiKhoan;
+            dtp_denngay.Value = dtp_tungay.Value = DateTime.Now;
         }
 
         private void bt_capnhattktricno_Click(object sender, EventArgs e)
@@ -70,7 +71,7 @@ namespace UyNhiemChiBIDV
             else
             {
                 unc.Chinhanh = tb_chinhanh.Text;
-                unc.tktrichno = tb_tktrichno.Text;
+                unc.Tktrichno = tb_tktrichno.Text;
                 unc.Tentktrichno = tb_tentktrichno.Text;
                 unc.sotk = tb_sotk.Text;
                 unc.sotien = Convert.ToDecimal(tb_sotienbs.Text);

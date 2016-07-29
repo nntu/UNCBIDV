@@ -66,13 +66,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bt_in = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.bt_laysol = new System.Windows.Forms.Button();
             this.dtp_denngay = new System.Windows.Forms.DateTimePicker();
             this.dtp_tungay = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.SaveFileExcel = new System.Windows.Forms.SaveFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -440,6 +440,16 @@
             this.tabPage2.Text = "Tra Cứu";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(9, 271);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Xuất Excel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // bt_laysol
             // 
             this.bt_laysol.Location = new System.Drawing.Point(461, 13);
@@ -458,7 +468,7 @@
             this.dtp_denngay.Name = "dtp_denngay";
             this.dtp_denngay.Size = new System.Drawing.Size(106, 20);
             this.dtp_denngay.TabIndex = 14;
-            this.dtp_denngay.Value = new System.DateTime(2016, 7, 27, 14, 54, 35, 0);
+            this.dtp_denngay.Value = new System.DateTime(2016, 7, 29, 0, 0, 0, 0);
             // 
             // dtp_tungay
             // 
@@ -468,7 +478,7 @@
             this.dtp_tungay.Name = "dtp_tungay";
             this.dtp_tungay.Size = new System.Drawing.Size(106, 20);
             this.dtp_tungay.TabIndex = 13;
-            this.dtp_tungay.Value = new System.DateTime(2016, 7, 27, 14, 54, 35, 0);
+            this.dtp_tungay.Value = new System.DateTime(2016, 7, 29, 0, 0, 0, 0);
             // 
             // label16
             // 
@@ -496,16 +506,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(719, 186);
             this.dataGridView1.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(9, 271);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Xuất Excel";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // SaveFileExcel
             // 
             this.SaveFileExcel.DefaultExt = "xls";
@@ -519,7 +519,7 @@
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "Uy Nhiệm Chi - BIDV Cần Thơ";
+            this.Text = "Uy Nhiệm Chi - BIDV Cần Thơ - tunn1@bidv.com.vn";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

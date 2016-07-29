@@ -30,7 +30,7 @@ namespace UyNhiemChiBIDV
             UNCA41.Refresh();
             crv.ReportSource = UNCA41;
             UNCA41.SetParameterValue("TenTKTN", uncl.Tentktrichno);
-            UNCA41.SetParameterValue("TKTrichNo", uncl.tktrichno);
+            UNCA41.SetParameterValue("TKTrichNo", uncl.Tktrichno);
             UNCA41.SetParameterValue("ChiNhanh", uncl.Chinhanh);
             UNCA41.SetParameterValue("NguoiHuong", uncl.nguoihuong);
             UNCA41.SetParameterValue("socmnd", uncl.socmnd);

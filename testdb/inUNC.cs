@@ -8,14 +8,15 @@ namespace UyNhiemChiBIDV
         public string Tentktrichno { get; set; }
         public string Tktrichno { get; set; }
         public string Chinhanh { get; set; }
-        public string NguoiHuong { get; set; }
-        public string SoCmnd { get; set; }
-        public DateTime? NgayCap { get; set; }
-        public string NoiCap { get; set; }
-        public string Sotk { get; set; }
-        public string NganhangNhan { get; set; }
+        public string nguoihuong { get; set; }
+        public DateTime? ngaycap { get; set; }
+        public string socmnd { get; set; }
+        public string noicap { get; set; }
+        public string sotk { get; set; }
+        public string nganhangnhhan { get; set; }
         public decimal sotien { get; set; }
         public string sotienbc { get; set; }
+       
         public string noidung { get; set; }
         public bool phitrong { get; set; } = false;
         public bool phingoai { get; set; } = false;
@@ -26,9 +27,9 @@ namespace UyNhiemChiBIDV
 
     public class inUNC
     {
-        public int Id { get; set; }
+        
         public string Tentktrichno { get; set; }
-        public string tktrichno { get; set; }
+        public string Tktrichno { get; set; }
         public string Chinhanh { get; set; }
         public string nguoihuong { get; set; }
         public DateTime? ngaycap { get; set; }
