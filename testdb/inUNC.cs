@@ -2,6 +2,28 @@
 
 namespace UyNhiemChiBIDV
 {
+    public class UNC
+    {
+        public int Id { get; set; }
+        public string Tentktrichno { get; set; }
+        public string Tktrichno { get; set; }
+        public string Chinhanh { get; set; }
+        public string NguoiHuong { get; set; }
+        public string SoCmnd { get; set; }
+        public DateTime? NgayCap { get; set; }
+        public string NoiCap { get; set; }
+        public string Sotk { get; set; }
+        public string NganhangNhan { get; set; }
+        public decimal sotien { get; set; }
+        public string sotienbc { get; set; }
+        public string noidung { get; set; }
+        public bool phitrong { get; set; } = false;
+        public bool phingoai { get; set; } = false;
+        public string KeToanTruong { get; set; } = @"";
+        public string ChuTaiKhoan { get; set; } = @"";
+        public DateTime NgayIn { get; set; }
+    }
+
     public class inUNC
     {
         public int Id { get; set; }
@@ -22,6 +44,6 @@ namespace UyNhiemChiBIDV
         public bool phingoai { get; set; } = false;
         public string KeToanTruong { get; set; } = @"";
         public string ChuTaiKhoan { get; set; } = @"";
-        public DateTime Ngayin { get; set; }
+       
     }
 }
